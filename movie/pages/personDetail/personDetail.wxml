@@ -1,0 +1,34 @@
+<!--pages/personDetail/personDetail.wxml-->
+<view class="container">
+   <block wx:if="{{showLoading}}">
+       <view class="loading">玩命加载中...</view>
+   </block>
+
+   <block wx:elif="{{showContent}}">
+        <view class="pd-hd">
+            <view class="pd-hd-bg" style="background-image:url({{personDetail.avatars.medium}})"></view>
+            <view class="pd-intro">
+                <view class="pd-avatar" style="background-image:url({{personDetail.avatars.medium}})"></view>
+                <view class="pd-name-cn">{{personDetail.name}}</view>
+                <view class="pd-name-en">{{personDetail.name_en}}</view>
+                <view class="pd-address">{{personDetail.born_place}}</view>
+            </view>
+            <view class="pd-favorite {{isPersonFavorite ? 'pd-favorite-active' : ''}}" bindtap="favoritePerson">收藏</view>
+        </view>
+        <view class="pd-bd">
+            <view class="pd-work">
+                <block wx:for="{{personDetail.works}}" wx:key="personDetailItem">
+                    <view class="pd-work-item" data-id="{{item.subject.id}}" bindtap="viewFilmDetail">
+                        <image class="pd-work-cover" src="{{item.subject.images.large}}"></image>
+                        <view class="pd-work-intro">
+                            <view class="pd-work-title">{{item.subject.title}}</view>
+                            <view class="pd-work-roles">担任：{{item.roles}}</view>
+                        </view>
+                    </view> 
+                </block>
+            </view>
+        </view>
+   </block>
+</view>
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message:message}}"></template>
