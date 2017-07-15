@@ -1,2 +1,9 @@
 <!--pages/searchResult/searchResult.wxml-->
-<text>pages/searchResult/searchResult.wxml</text>
+<import src="../../component/nullTip/nullTip.wxml"/>
+<import src="../../component/filmList/filmList.wxml"/>
+<block wx:if="{{isNull}}">
+  <template is="nullTip" data="{{nullTip:nullTip}}"></template>
+</block>
+<block wx:else>
+  <template is="filmList" data="{{films:films,hasMore:hasMore,showLoading:showLoading}}"></template>
+</block>

@@ -1,2 +1,5 @@
 <!--pages/top/top.wxml-->
-<text>pages/top/top.wxml</text>
+<import src="../../component/filmList/filmList.wxml"/>
+<template is="filmList" data="{{films:films,hasMore:hasMore,showLoading:showLoading}}"></template>
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message:message}}"></template>

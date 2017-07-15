@@ -1,1 +1,3 @@
 /* pages/top/top.wxss */
+@import "../../component/filmList/filmList.wxss";
+@import "../../component/message/message.wxss";

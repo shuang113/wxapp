@@ -15,7 +15,7 @@ var url = 'https://static.sesine.com/wechat-weapp-movie'
 module.exports = {
   city: '',
   count: 10,
-  baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
+  baiduAK: 'bUiz7HUMF0BWE2nvjT1HIdGLzyFNeyx1',
   apiList: {
     popular: 'https://api.douban.com/v2/movie/in_theaters',
     coming: 'https://api.douban.com/v2/movie/coming_soon',
@@ -28,7 +28,7 @@ module.exports = {
     personDetail: 'https://api.douban.com/v2/movie/celebrity/',
     baiduMap: 'https://api.map.baidu.com/geocoder/v2/'
   },
-  hotKeyword: ['功夫熊猫', '烈日灼心', '摆渡人', '长城', '我不是潘金莲', '这个杀手不太冷', '驴得水', '海贼王之黄金城', '西游伏妖片', '我在故宫修文物', '你的名字'],
+  hotKeyword: ['神偷奶爸3', '变形金刚5：最后的骑士', '京城81号Ⅱ', '绝世高手', '我不是潘金莲', '这个杀手不太冷', '驴得水', '海贼王之黄金城', '西游伏妖片', '我在故宫修文物', '你的名字'],
   hotTag: ['动作', '喜剧', '爱情', '悬疑'],
   bannerList: [
     { type: 'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg' },

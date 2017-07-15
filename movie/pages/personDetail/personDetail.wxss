@@ -1,5 +1,6 @@
   /* pages/personDetail/personDetail.wxss */
-@import "../../component/message/message.wxss"
+@import "../../component/message/message.wxss";
+
 .pd-hd{
   position: relative;
   width: 100%;
@@ -12,9 +13,9 @@
   width:100%;
   height: 600rpx;
   background-repeat:no-repeat;
-  background-position:center top;
+  background-position:center;
   background-size:cover;
-  filter:blur(15prx);
+  filter:blur(15rpx);
   transform:scale(1.2);
 }
 .pd-hd:before{

@@ -100,7 +100,7 @@ function fetchPersonDetail(url, id, cb) {
         showContent: true
       })
       wx.setNavigationBarTitle({
-        title: res.data.name
+        title: res.data.name+' 介绍'
       })
       wx.stopPullDownRefresh()
       typeof cb == 'function' && cb(res.data)
@@ -146,7 +146,7 @@ function search(url, keyword, start, count, cb) {
             showLoading: false
           })
           wx.setNavigationBarTitle({
-            title: keyword
+            title: '搜索 \''+keyword+'\' 的结果'
           })
         }
         wx.stopPullDownRefresh()

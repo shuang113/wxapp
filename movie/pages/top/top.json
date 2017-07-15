@@ -1,1 +1,4 @@
-{}
+{
+  "navigationBarTitleText": "TOP排行榜",
+  "enablePullDownRefresh": true
+}

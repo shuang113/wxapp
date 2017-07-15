@@ -1,1 +1,3 @@
 /* pages/searchResult/searchResult.wxss */
+@import "../../component/nullTip/nullTip.wxss";
+@import "../../component/filmList/filmList.wxss";

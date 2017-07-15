@@ -1,66 +1,61 @@
 // pages/search/search.js
+var douban=require('../../comm/script/fetch')
+var config=require('../../comm/script/config')
+var message=require('../../component/message/message')
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    searchType:'keyword',
+    hotKeyword: config.hotKeyword,
+    hotTag:config.hotTag
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
   
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  changeSearchType:function(){
+    var types=['默认','类型'];
+    var searchType=['keyword','tag'];
+    var that=this
+    wx.showActionSheet({
+      itemList: types,
+      success:function(res){
+        if(!res.cancel){
+          that.setData({
+            searchType:searchType[res.tapIndex]
+          })
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  search:function(e){
+    var that=this
+    var keyword=e.detail.value.keyword
+    if(keyword==''){
+      message.show.call(that,{
+        content:'请输入内容',
+        icon:'null',
+        duration:1500
+      })
+      return false
+    }else{
+      var searchUrl=that.data.searchType=='keyword'?config.apiList.search.byKeyword:config.apiList.search.byTag;
+      wx.redirectTo({
+        url: '../searchResult/searchResult?url='+encodeURIComponent(searchUrl)+'&keyword='+keyword
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  searchByKeyword:function(e){
+    var that=this
+    var keyword=e.currentTarget.dataset.keyword
+    wx.navigateTo({
+      url: '../searchResult/searchResult?url='+encodeURIComponent(config.apiList.search.byKeyword)+'&keyword='+keyword
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  searchByTag:function(e){
+    var that=this
+    var keyword=e.currentTarget.dataset.keyword
+    wx.navigateTo({
+      url: '../searchResult/searchResult?url='+encodeURIComponent(config.apiList.search.byTag)+'&keyword='+keyword
+    })
   }
 })
