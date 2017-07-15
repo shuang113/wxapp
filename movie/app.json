@@ -35,16 +35,16 @@
         "text": "待映"
       },
       {
-        "pagePath": "pages/search/search",
-        "iconPath": "dist/images/search_icon.png",
-        "selectedIconPath": "dist/images/search_active_icon.png",
-        "text": "搜索"
-      },
-      {
         "pagePath": "pages/top/top",
         "iconPath": "dist/images/top_icon.png",
         "selectedIconPath": "dist/images/top_active_icon.png",
         "text": "口碑"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "dist/images/search_icon.png",
+        "selectedIconPath": "dist/images/search_active_icon.png",
+        "text": "搜索"
       }
     ]
   },
